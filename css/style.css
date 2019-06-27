@@ -1,0 +1,172 @@
+/*
+brown:#551e08
+gray:#3c3838
+*/
+
+.hidden{
+  display: none;
+}
+
+body,
+html{
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+body{
+  background-color: #3c3838;
+}
+
+/* FORMULARZ */
+select{
+  width: auto;
+  background-color: white;
+}
+
+.main-content{
+  margin: 30px;
+}
+
+.logout{
+  cursor: pointer;
+}
+
+.login-form{
+  padding: 40px;
+  background-color: #551e08;
+  border: 3px solid#431807;
+  box-shadow: 0 0 60px 5px #431807;
+  border-radius: 40px;
+}
+
+ .login-content{
+display: flex;
+height: 100%;
+justify-content: center;
+align-items: center;
+}
+
+.error-login{
+  background-color: red;
+  padding: 10px;
+}
+
+.main-content{
+  height: 100%;
+}
+
+
+/* header nav */
+.nav-content{
+  width: 100%;
+  display: flex;
+  background-color: #551e08;
+  border-bottom: 3px solid #431807;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-content .logo{
+  margin-left: 30px;
+}
+
+.main-nav ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 30px;
+}
+
+.menu a, .menu .logout {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 20px;
+}
+
+.menu > li{
+  margin-right: 5px;
+
+}
+
+.menu li a{
+  background-color: #6a2d15;
+}
+
+.menu li:hover a{
+  background-color: #431807;
+}
+
+.menu .submenu{
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu .submenu li {
+  background-color: #431807;
+}
+
+.menu .has-submenu{
+  position: relative;
+}
+
+.menu .submenu a:hover , .menu .logout:hover{
+  background-color: #551e08;
+}
+
+.menu .has-submenu:hover .submenu{
+  position: absolute;
+  top:30px;
+  left:0;
+  display: block;
+}
+
+
+/* Kalendarz */
+
+
+.calendar-table{
+  height: 100%;
+  font-size: 2rem;
+  width:100%;
+  background-color: gray;
+  border:5px solid #551e08;
+  text-align: center;
+}
+
+.calendar-table td{
+  position: relative;
+  height:100px;
+}
+
+.calendar-table .cell-bcg{
+  position: absolute;
+  font-size: 5rem;
+  opacity: 0.5;
+  line-height: 100px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  top: 0;
+  left: 0;
+}
+
+
+.calendar-table .event{
+  position: relative;
+  font-weight: 900;
+  font-size: 3rem;
+  color: black;
+  background-color: rgba(255,0,0,0.1);
+  margin: 0 5px 5px;
+  cursor:pointer;
+  overflow: hidden;
+}
+
+.calendar-table .event.list {
+  font-size: 2rem;
+  padding: 5px;
+}
