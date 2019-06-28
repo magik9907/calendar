@@ -27,8 +27,8 @@ if($_SESSION["isLogIn"]==TRUE && $_SESSION["isAdmin"]==true):
 <div class="us-form">
   <label>Nazwa Użytkownika <input type="text" name="use[name]" required class="name"> </label><br>
   <label>Hasło <input type="password" name="use[pass]" required class="pass"> </label><br>
-  <label>administrator <input type="checkbox" name="use[admin]" value="1" checked class="a-a"> </label><br>
-  <label>Konto aktywne <input type="radio" name="use[a]" value="1" checked class="a-a"> </label><br>
+  <label>administrator <input type="checkbox" name="use[admin]" value="1" class="a-a"> </label><br>
+  <label>Konto aktywne <input type="radio" name="use[a]" value="1"  class="a-a"> </label><br>
   <label>konto nieaktywne <input type="radio" name="use[a]" value="0" class="a-n"> </label><br>
   <button type="submit" name="use[d]" class="dodaj" value="dodaj">Dodaj</button>
 </div>

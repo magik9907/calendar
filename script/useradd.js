@@ -13,7 +13,7 @@
       n.checked=false;
       document.querySelector("form button").value = "";
       document.querySelector("form button").setAttribute("class","dodaj");
-        document.querySelector("form button").innerHTML ="dodaj";
+      document.querySelector("form button").innerHTML ="dodaj";
     }
     else{
       var xhttp = new XMLHttpRequest();

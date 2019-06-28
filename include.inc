@@ -21,6 +21,9 @@ function dataBaseLogIn(){
   return $conn;
 }
 
+
+//set session
+
 if(isset($_POST['login'])){
   $conn = dataBaseLogIn();
 
@@ -40,11 +43,14 @@ if(isset($_POST['login'])){
   $conn->close();
 }
 
+//logout
+
 if(isset($_REQUEST['logout'])){
   session_unset();
   session_destroy();
 }
 
+//add event to calendar (multi users)
 
 if(isset($_POST["add"]["add"])){
   $conn = dataBaseLogIn();
@@ -58,6 +64,7 @@ if(isset($_POST["add"]["add"])){
   $conn->close();
 }
 
+//deleting event (not permanently)
 
 if(isset($_POST["del"]["del"])){
   $conn = dataBaseLogIn();
@@ -65,23 +72,25 @@ if(isset($_POST["del"]["del"])){
   $conn->query($sql);
 }
 
-  if(isset($_POST["mod"]["mod"])){
-    $conn = dataBaseLogIn();
-    $sql = 'UPDATE `de_event` SET `title`="'.$_POST["mod"]["title"].'",`desciption`="'.$_POST["mod"]["desc"].'",`date`="'.$_POST["mod"]["date"].'",`priority`="'.$_POST["mod"]["prio"].'" WHERE `id`="'.$_POST["mod"]["mod"].'"';
+//modyfying event
+
+if(isset($_POST["mod"]["mod"])){
+  $conn = dataBaseLogIn();
+  $sql = 'UPDATE `de_event` SET `title`="'.$_POST["mod"]["title"].'",`desciption`="'.$_POST["mod"]["desc"].'",`date`="'.$_POST["mod"]["date"].'",`priority`="'.$_POST["mod"]["prio"].'" WHERE `id`="'.$_POST["mod"]["mod"].'"';
+  $conn->query($sql);
+}
+
+
+//creating and modyfying user
+if(isset($_POST["use"]['d'])){
+  $conn = dataBaseLogIn();
+
+  if(isset($_POST["use"]["admin"]) && $_POST["use"]["admin"]=="1"){$x="1";}else{$x="0";};
+  if($_POST["use"]['d']=="dodaj"){
+    $sql='INSERT INTO `de_users`(`id`, `user_name`, `user_pass`, `isAdmin`, `isActive`) VALUES (NULL,"'.$_POST["use"]['name'].'","'.$_POST["use"]['pass'].'","'.$x.'","'.$_POST["use"]['a'].'")';
+  }else {
+    $sql="UPDATE `de_users` SET `user_name`='".$_POST["use"]['name']."',`user_pass`='".$_POST["use"]['pass']."',`isAdmin`='".$x."',`isActive`='".$_POST["use"]['a']."' WHERE  `id`='".$_POST["use"]['d']."'";
+  }
     $conn->query($sql);
-  }
-
-
-
-  if(isset($_POST["use"]['d'])){
-    $conn = dataBaseLogIn();
-
-    if(isset($_POST["use"]["admin"]) && $_POST["use"]["admin"]=="1"){$x="1";}else{$x="0";};
-    if($_POST["use"]['d']=="dodaj"){
-      $sql='INSERT INTO `de_users`(`id`, `user_name`, `user_pass`, `isAdmin`, `isActive`) VALUES (NULL,"'.$_POST["use"]['name'].'","'.$_POST["use"]['pass'].'","'.$x.'","'.$_POST["use"]['a'].'")';
-    }else {
-      $sql="UPDATE `de_users` SET `user_name`='".$_POST["use"]['name']."',`user_pass`='".$_POST["use"]['pass']."',`isAdmin`='".$x."',`isActive`='".$_POST["use"]['a']."' WHERE  `id`='".$_POST["use"]['d']."'";
-    }
-      $conn->query($sql);
-  }
+}
 ?>
