@@ -6,6 +6,6 @@ The file contains necessary tables and data for the correct operation of the sit
 
 user setting for database
 
-uzytkownik bazy: root
-haslo uzytkownika:  ""     ---jest puste
+database user: root
+user password:  ""     ---it's empty string
 host: localhost
