@@ -1,7 +1,10 @@
+ 
+ 
  database.sql
-zawiera tabele bazy(aby strona poprawnie dzialala nazwa bazy danych powinna byc: "app")
 
-w celu poprawnego dzialania nalezy uzyc ustawien
+The file contains necessary tables and data for the correct operation of the site (the database name mast be : "app")
+
+user setting for database
 
 uzytkownik bazy: root
 haslo uzytkownika:  ""     ---jest puste
