@@ -9,6 +9,5 @@
         <p><strong>Login</strong> lub <strong>hasło</strong> jest nieprawidłowe</p>
       </div>
     <?php endif; ?>
-    <p>admin<br>admin</p>
   </form>
 </div>

@@ -3,7 +3,6 @@
 if($_SESSION["isLogIn"]==TRUE):
  ?>
 
-dsds
 
 <?php
 endif;
